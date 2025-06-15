@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { BG_IMG, USER_AVATAR, USER_ICON } from "../utils/constants";
+import Footer from "./Footer";
 const Login = () => {
  
   const dispatch = useDispatch();
@@ -87,6 +88,7 @@ const Login = () => {
     }
   };
   return (
+    <>
     <div>
       <Header />
       <div className="absolute">
@@ -98,7 +100,7 @@ const Login = () => {
       <form
         onSubmit={(e) => e.preventDefault()}
         action=""
-        className="w-4/12 absolute p-12 bg-black bg-opacity-60  text-white mt-36 mx-auto right-0 left-0"
+        className="w-4/12 absolute p-12 bg-black opacity-80 text-white mt-36 mx-auto right-0 left-0"
       >
         <h1 className="font-bold text-3xl py-4 ">
           {isSignInForm ? "Sign In" : "Sign up"}
@@ -137,7 +139,12 @@ const Login = () => {
             : "Already have an account?Sign in now"}
         </p>
       </form>
+      
     </div>
+    <div className="pt-[44%]">
+      <Footer/>
+    </div>
+    </>
   );
 };
 

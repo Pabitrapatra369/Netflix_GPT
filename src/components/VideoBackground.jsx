@@ -14,7 +14,7 @@ const VideoBackground = ({ movieId }) => {
     //     referrerPolicy="strict-origin-when-cross-origin"
     //   />
     // </div>
-    <div className=" w-screen h-screen overflow-hidden">
+    <div className="absolute w-screen h-screen overflow-hidden">
   <iframe
     className=" top-0 left-0 w-full h-full scale-150 transform object-cover"
     src={`https://www.youtube.com/embed/${trailer?.key}?autoplay=1&mute=1&loop=1&playlist=${trailer?.key}`}
