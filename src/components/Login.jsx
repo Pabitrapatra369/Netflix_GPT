@@ -12,6 +12,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG, USER_AVATAR, USER_ICON } from "../utils/constants";
 const Login = () => {
  
   const dispatch = useDispatch();
@@ -44,8 +45,7 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: name.current?.value,
-            photoURL:
-              "https://media.licdn.com/dms/image/v2/D5603AQHqXU5R2X_6og/profile-displayphoto-shrink_100_100/B56ZVfTZ7IHQAU-/0/1741060678361?e=1755129600&v=beta&t=zUTpTapVQjJNuSw5LoHcuz8iJPXHzXoDtEMaWGbStNA",
+            photoURL:USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -91,7 +91,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://i.pinimg.com/originals/e9/10/5c/e9105c5fd15cfca792dd563f605c4a9d.jpg"
+          src={BG_IMG}
           alt=""
         />
       </div>
